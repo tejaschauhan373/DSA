@@ -20,11 +20,11 @@ def mergeTwoLinkeeList(l1: ListNode, l2: ListNode) -> ListNode:
     res = l1
     while l1 and l2:
         temp = ListNode()
-        while l1 is not None and l1.val l < l2.val:
+        while l1 is not None and l1.val < l2.val:
             temp = l1
             l1 = l1.next
 
-        temp = ListNode()
+        temp.next = l2
         temp = l1
         l1 = l2
         l2 = temp
