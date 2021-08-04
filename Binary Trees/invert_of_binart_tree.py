@@ -14,8 +14,6 @@ class Solution:
         self.swapl(root.left)
         self.swapl(root.right)
 
-        temp = TreeNode()
-
         temp = root.left
         root.left = root.right
         root.right = temp
