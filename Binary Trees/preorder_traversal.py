@@ -3,6 +3,8 @@ from typing import List
 from collections import deque
 
 
+# https://www.techiedelight.com/preorder-tree-traversal-iterative-recursive/
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
