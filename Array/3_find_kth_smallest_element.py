@@ -50,3 +50,6 @@ def mergeSort(arr, l, r):
 
 mergeSort(arr, 0, len(arr) - 1)
 print(arr[k - 1])
+
+# Quick Sort
+#https://www.youtube.com/watch?v=eA3PMKlRZs8
