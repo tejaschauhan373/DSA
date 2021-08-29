@@ -16,11 +16,11 @@ def brute_force(numbers: list, target_sum: int) -> list:
 
 def binary_search(numbers: list, low: int, high: int, find_num: int) -> int:
     """
-    :param numbers:
-    :param low:
-    :param high:
-    :param find_num:
-    :return:
+    :param numbers: sorted list of numbers
+    :param low: starting index of window
+    :param high: ending index of window
+    :param find_num: number to find in window
+    :return: index of target number if present else return -1
     """
     if low <= high:
         mid = (high + low) // 2
@@ -59,7 +59,7 @@ def optimize_map(numbers: list, target_sum: int) -> list:
     :param target_sum: sum of pair should be
     :return: list of pair with given sum
 
-    Time complexity : O(n^2)
+    Time complexity : O(n)
     """
     my_set = {}
     all_pairs = []
@@ -69,6 +69,30 @@ def optimize_map(numbers: list, target_sum: int) -> list:
         if find_num in my_set:
             all_pairs.append([numbers[i], find_num])
 
+    return all_pairs
+
+
+def two_pointer_approach(numbers: list, target_sum: int) -> list:
+    """
+    :param numbers: list of numbers
+    :param target_sum: sum of pair should be
+    :return: list of pair with given sum
+
+    Time complexity : O(n) with reduced space complexity or without using dictionary
+    """
+    numbers.sort()
+    all_pairs = []
+    i = 0
+    j = len(numbers) - 1
+    while i < j:
+        if numbers[i] + numbers[j] == target_sum:
+            all_pairs.append([numbers[i], numbers[j]])
+            i += 1
+            j -= 1
+        elif numbers[i] + numbers[j] < target_sum:
+            i += 1
+        else:
+            j -= 1
     return all_pairs
 
 
