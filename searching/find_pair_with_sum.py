@@ -99,3 +99,4 @@ def two_pointer_approach(numbers: list, target_sum: int) -> list:
 print(brute_force([2, 7, 11, 15], 9))
 print(moderate_bin_search([2, 7, 11, 15], 9))
 print(optimize_map([2, 7, 11, 15], 9))
+print(two_pointer_approach([2, 7, 11, 15, ], 9))
