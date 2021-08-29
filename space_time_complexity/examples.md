@@ -1,45 +1,49 @@
 # Space Time Complexity Analysis By Example
 
-##Example 1:
+## Example 1:
 
+```
 for(int i=0; i <= n-1; i++){
     for(int j = i+!; j <= n -1;j++){
         // Constant work K
     }
 }
+```
 
 Time Complexity:
 = (n-1)*(n-1)*k 
 = n^2k - 2nk + 1k
 ~= O(n^2)
 
-##Example 2:
+## Example 2:
 
+```
 for(int i=0; i <= n-1; i++){
-    for(int j = i+!; j <= K;j++){
+    for(int j = i+1; j <= K;j++){
         // Constant work C
     }
 }
+```
 
 Time Complexity:
 = (n-1)*K*C
 = NKC - KC
 ~= O(n)
 
-##Example 3:
+## Example 3:
 
-Bubble Sort:
+### Bubble Sort:
 
-Best Case : O(n) if already sorted 
-(make one flag to check if there are any swapped or not, 
-if no swapped occur in inner loop then array is already sorted & 
-no need to do more steps)
-Average Case : O(n^2)
-Worst Case: O(n^2)
+ 1. Best Case : O(n) if already sorted 
+    (make one flag to check if there are any swapped or not, 
+    if no swapped occur in inner loop then array is already sorted & 
+    no need to do more steps)
+ 2. Average Case : O(n^2)
+ 3. Worst Case: O(n^2)
 
-##Example 4:
+## Example 4:
 
-Binary Search
+### Binary Search
 
 recursive function call will like:
 
@@ -57,8 +61,9 @@ Best Case: O(1)
 Average Case : O(logN)
 Worst Case: O(logN)
 
-##Example 5:
+## Example 5:
 
+```
 void mergesort(vector<int> &arr, int s, int e){
     if(s>=e){
         return;
@@ -68,6 +73,7 @@ void mergesort(vector<int> &arr, int s, int e){
     mergesort(arr, mid+1, e); // T(N/2)
     return merge(arr,s,e); // KN
 }
+```
 
 T(N) = K + T(N/2) + T(N/2) + KN
 = K + 2T(N/2) + KN
@@ -80,14 +86,16 @@ T(N) = (summation from i=1 to LogN) kN
 = KNlogN
 = O(NlogN)
 
-##Example 6:
+## Example 6:
 
+```
 int power(int a, int b){
     if (n == 0){
         return 1;
     }
     return a*power(a, n-1);
 }
+```
 
 Explanation:
 a^n = a*(a^(n-1))
@@ -101,8 +109,9 @@ T(N) = (summation from i=1 to N) kN
 
 Space Complexity = O(N)// recursion will use stack space
 
-##Example 7:
+## Example 7:
 
+```
 int power(int a, int n){
     if (n==0){
         return 1;
@@ -116,6 +125,7 @@ int power(int a, int n){
     
     return halfPowerSquare;
 }
+```
 
 T(N) = T(N/2) + k
 T(N/2) = T(N/4) + k
@@ -127,8 +137,9 @@ T(N) = (summation from i=1 to LogN) k
 = KlogN
 = O(logN)
 
-##Example 8:
+## Example 8:
 
+```
 // Simple recursion
 int fib(int n){
     if(n==0 or n==1){
@@ -136,6 +147,7 @@ int fib(int n){
     }
     return fib(n-1) + fib(n-2);
 }
+```
 
 Time Complexity :
 T(N) = calls * each call
@@ -144,6 +156,7 @@ T(N) = calls * each call
 
 // Simple DP based Optimisation
 
+```
 // Top Down Approach
 int fib(int n, vector<int> &dp){
     if(n==0 or n==1){
@@ -156,10 +169,12 @@ int fib(int n, vector<int> &dp){
     
     return dp[n] = fib(n-1,dp) + fb(n-2,dp);
 }
+```
 
 Time complexity :
 T(N) = 2N - 1 = O(N)
 
+```
 // Bottom Up Approach
 int fib2(int n){
     int dp[n+1] = {0};
@@ -173,6 +188,7 @@ int fib2(int n){
     }
     return dp[n];
 }
+```
 
 Time Complexity:
 T(N) = O(N)
