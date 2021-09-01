@@ -6,5 +6,5 @@
 
 ### 2.RDBMS :
 * RDBMS stands for Relational Database Management System.
-* DBMS that incorporates the relational data model
-* In RDBMS, relationships between data items are expressed by means of tables
+* DBMS that incorporates the relational data model.
+* In RDBMS, relationships between data items are expressed by means of tables.

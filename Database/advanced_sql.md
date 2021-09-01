@@ -7,4 +7,4 @@
 4. ORDER BY
 
 4. SELECT * FROM STUDENTS ORDER BY percentage;
-2. SELECT count(student_id), country from students where country != 'IN' GROUP BY COUNTRY;
+2. SELECT count(student_id), country from students where country != 'IN' GROUP BY COUNTRY; 
