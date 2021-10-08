@@ -75,3 +75,4 @@
 * How much was it profitable to the system
 * Explain by example with technical details in depth
 * Here, you have chance to show your technical expertises
+* <b>It is chance to impress the interviewer.</b>
