@@ -5,7 +5,7 @@ def checkReverse(arr, n):
     start = 0
     end = n - 1
     for i in range(n // 2):
-        if arr[start] != arr[end]:
+        if arr[i] != arr[end - i]:
             return False
     return True
 
