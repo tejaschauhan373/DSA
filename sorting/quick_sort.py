@@ -18,7 +18,7 @@ def quicksort(arr: list, start: int, end: int):
     """
     Time Complexity in Average Case = O(NlogN)
     Time Complexity in Worst Case = O(N*N)
-    Space Complexity = O(1)
+    Space Complexity = O(1) + "stack to store recursive call"
     """
     if start > end:
         return

@@ -1,4 +1,9 @@
 def find_word(arr, left, right, find):
+    """
+    Time Complexity in worst case = O(N)
+    Time Complexity in Average case = O(LogN)
+    Space Complexity = O(1)
+    """
     if left > right:
         return -1
 
