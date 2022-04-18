@@ -1,5 +1,5 @@
 # Definition for singly-linked list.
-from ctypes import addressof, c_int
+# https://leetcode.com/problems/intersection-of-two-linked-lists/
 from typing import Optional
 
 
