@@ -5,7 +5,7 @@ class ListNode:
         self.next = next
 
 
-def mergeTwoLinkeeList(l1: ListNode, l2: ListNode) -> ListNode:
+def merge_two_linked_list(l1: ListNode, l2: ListNode) -> ListNode:
     if l1 is None:
         return l2
 

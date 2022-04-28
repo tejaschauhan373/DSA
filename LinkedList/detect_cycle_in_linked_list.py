@@ -1,24 +1,25 @@
+# https://leetcode.com/problems/linked-list-cycle
+
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
 
-def hasCycle1(head: ListNode) -> bool:
+def has_cycle1(head: ListNode) -> bool:
     """
-    :param head:
-    :return:
-
     Brute Force Approach
+    Time Complexity : O(N)
+    Space Complexity: O(N)
     """
-    all_list = []
+    all_list = {}
 
     if head is None:
         return False
 
     while head:
         if head not in all_list:
-            all_list.append(head)
+            all_list[head] = None
         else:
             return True
         head = head.next

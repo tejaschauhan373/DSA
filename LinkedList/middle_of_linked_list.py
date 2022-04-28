@@ -1,5 +1,6 @@
 # Time complexity = O(n/2)
 # Space Complexity = O(1)
+# https://leetcode.com/problems/middle-of-the-linked-list/
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -7,7 +8,7 @@ class ListNode:
         self.next = next
 
 
-def middleNode(head: ListNode) -> ListNode:
+def middle_node(head: ListNode) -> ListNode:
     slow = head
     fast = head
 
