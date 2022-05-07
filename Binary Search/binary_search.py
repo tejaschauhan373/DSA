@@ -2,6 +2,10 @@
 # Time Complexity = O(logN)
 # Space Complexity = O(N)
 def binary_search_recursive(arr: list, k: int, start: int, end: int) -> int:
+    """
+    Time Complexity = O(N)
+    Space Complexity = O(H) ; Height of Tree (To store call stack)
+    """
     if start > end:
         return -1
 
@@ -16,6 +20,10 @@ def binary_search_recursive(arr: list, k: int, start: int, end: int) -> int:
 
 
 def binary_search_iterative(arr: list, k: int) -> int:
+    """
+    Time Complexity = O(N)
+    Space Complexity = O(1)
+    """
     start = 0
     end = len(arr) - 1
 
