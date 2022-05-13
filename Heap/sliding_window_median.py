@@ -5,7 +5,7 @@ from typing import List
 def median_sliding_window_brute(nums: List[int], k: int) -> List[float]:
     """
     Time Complexity = O((N - k +1)*(KLogK))
-    Space Complexity = O(K)
+    Space Complexity = O(N-K+1)
     """
     res = []
     for i in range(len(nums) - k + 1):

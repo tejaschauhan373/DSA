@@ -1,5 +1,5 @@
 # https://practice.geeksforgeeks.org/problems/longest-path-in-a-matrix3019
-# Python3 program to find the longest path in a matrix
+# Python3 program to find the longest path in a Matrix
 # with given constraints
 
 n = 3
