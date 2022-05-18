@@ -5,7 +5,6 @@
 1. [python_wiki_for_complexity of data_structure](https://wiki.python.org/moin/TimeComplexity)
 2. [concept_of_binary_tree](https://www.geeksforgeeks.org/difference-between-full-and-complete-binary-tree/)
 
-
 ## List of Data Structure and its Time Complexity
 
 1. List
@@ -51,9 +50,22 @@
     2. PopMin/PopMax : O(LogN)
     3. GetMin/GetMax : O(1)
     4. Heap is complete binary tree, hence height is always O(LogN)
-    5. In a max heap, the smallest element is always at a leaf node. So we need to check for all lead nodes for the minimum value. Worst case complexity will be O(N)
+    5. In a max heap, the smallest element is always at a leaf node. So we need to check for all lead nodes for the
+       minimum value. Worst case complexity will be O(N)
     6. Heap sort is efficient, consistent (Best TC = Average TC = The Worst TC) and uses minimum memory.
 
 8. Trie:
-   1. Insert : O(key length)
-   2. Search : O(key length)
+    1. Insert : O(key length)
+    2. Search : O(key length)
+    3. The shape or the structure of trie will depend upon what data has been inserted, the order of insertion of
+       different strings doesn't matter in case of trie.
+    4. Looking up data in a trie is faster in the worst case, O(m) time of hash table.
+    5. The worst-case lookup speed in an imperfect hash table is O(N) time, but far more typically is O(1), with O(m)
+       time spent evaluating the hash.
+    6. Some tries can require more space than a hash table.
+    7. In trie, memory may be allocated for each character in the search string, rather than a single chunk of memory for the whole entry, as in most hash tables.
+    8. Also, for each character creating a node takes more memory than storing the string directly.
+    9. Trie can be useful for the following applications:
+       1. Autocomplete Feature in Google Search
+       2. Sorting a Set of Strings
+       3. Full-text search
