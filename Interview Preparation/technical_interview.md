@@ -15,7 +15,7 @@
 2. If you have requirements to integrate APIs, how you will do it?
    * Go through the document of requirements
    * Get the document of APIs
-   * Prepare documentation if there is need of permissions
+   * Prepare documentation if there is need of permissions/credential
    * Prepare pre assumption if needed
    * Write the code
    * Test in postman
@@ -24,7 +24,7 @@
     
 2. What is design pattern?
 
-3. All the question either from resume or form screening round summary
+3. All the question either from resume or from screening round summary
 
 4. What is microservice architecture?
 

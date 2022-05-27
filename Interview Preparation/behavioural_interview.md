@@ -1,6 +1,6 @@
 # Behavioural Interview
 
-<b>1. If you have completed work earlier & your teammates are lagging in their work,
+<b>1. If you complete work earlier & your teammates are lagging in their work,
    What should you do? </b>
    * I will help if he needs help from my side otherwise I will wait for completion of his task
    * Explain with your experience or make it realistic
@@ -27,9 +27,9 @@
    * Know all the fundamentals of web app like client, server, REST APIs
    * Postman tools like
    * Show that you have learnt Django, Flask, NodeJS before as requirements
-   * Say that you can learn properly it definitely in quick time
+   * Say that you can learn it definitely as you have done before in quick time
 
-<b>5. If you have given task to make web application & you have 5 team member,
+<b>5. If you are given a task to make web application & you have 5 team member,
    How will you manage? </b>
    * Give answer in STAR (Situation, Task, Action, Result) technique
    * Situation - Check feasibility, Requirements Gathering
