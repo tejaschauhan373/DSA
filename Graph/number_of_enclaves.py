@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/number-of-enclaves/
 from typing import List
 
 
@@ -21,9 +22,9 @@ def num_enclaves(grid: List[List[int]]) -> int:
     """
     R = len(grid)
     C = len(grid[0])
-    for i in range(1, R):
-        for j in range(1, C):
+    for i in range(R):
+        for j in range(C):
             if i == 0 or j == 0 or i == R - 1 or j == C - 1:
                 if grid[i][j] == 1:
                     fill(grid, i, j, R, C)
-    return sum(sum(i))
+    return sum(sum(row) for row in grid)
