@@ -1,9 +1,11 @@
-# Time Complexity of Operation on different data structure
+# Time Complexity of Operation on different data structure & Approaches
 
 ## Useful resources
 
-1. [python_wiki_for_complexity of data_structure](https://wiki.python.org/moin/TimeComplexity)
-2. [concept_of_binary_tree](https://www.geeksforgeeks.org/difference-between-full-and-complete-binary-tree/)
+1. [Python wiki for complexity of data structure](https://wiki.python.org/moin/TimeComplexity)
+2. [Concept of binary tree](https://www.geeksforgeeks.org/difference-between-full-and-complete-binary-tree/)
+3. [Complexity Analysis of Recursion](https://leetcode.com/explore/learn/card/recursion-i/256/complexity-analysis/1669/)
+4. [Dynamic Programming](https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/4034/)
 
 ## List of Data Structure and its Time Complexity
 
@@ -63,9 +65,22 @@
     5. The worst-case lookup speed in an imperfect hash table is O(N) time, but far more typically is O(1), with O(m)
        time spent evaluating the hash.
     6. Some tries can require more space than a hash table.
-    7. In trie, memory may be allocated for each character in the search string, rather than a single chunk of memory for the whole entry, as in most hash tables.
+    7. In trie, memory may be allocated for each character in the search string, rather than a single chunk of memory
+       for the whole entry, as in most hash tables.
     8. Also, for each character creating a node takes more memory than storing the string directly.
     9. Trie can be useful for the following applications:
-       1. Autocomplete Feature in Google Search
-       2. Sorting a Set of Strings
-       3. Full-text search
+        1. Autocomplete Feature in Google Search
+        2. Sorting a Set of Strings
+        3. Full-text search
+
+9. Graph:
+    1. Most asked algorithms in interview:
+        1. Graph Traversal, BFS, DFS
+        2. Shortest Path
+        3. Implicit Graphs (2D Matrix)
+        4. Problems
+    2. Graph can be represented in below two ways:
+        1. Adjacency Matrix
+            1. Space Complexity = O(V^2) ; N = number of vertices in graph
+        2. Hash table with key as node and value as list of adjacent nodes;
+            1. Space Complexity = O(V+E) ; V = no. of vertices in graphs, E = no. of edges in graphs
