@@ -39,7 +39,7 @@ def find_longest_from_a_cell(i, j, mat, dp, row, column):
 
     # If none of the adjacent fours is one greater we will take 1
     # otherwise we will pick maximum from all the four directions
-    dp[i][j] = max(x, max(y, max(z, max(w, 1))))
+    dp[i][j] = max(x, y, z, w, 1)
     return dp[i][j]
 
 
