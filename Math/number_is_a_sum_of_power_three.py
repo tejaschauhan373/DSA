@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/
-def recursive_check(self, n: int, ans):
+def recursive_check(n: int, ans):
     if n < 1:
         return False
     i = 0
@@ -14,8 +14,8 @@ def recursive_check(self, n: int, ans):
     if 3 ** (i - 1) == n:
         return True
     else:
-        return self.recursive_check(n - 3 ** (i - 1), ans)
+        return recursive_check(n - 3 ** (i - 1), ans)
 
 
-def check_powers_of_three(self, n: int) -> bool:
-    return self.recursive_check(n, {})
+def check_powers_of_three(n: int) -> bool:
+    return recursive_check(n, {})
