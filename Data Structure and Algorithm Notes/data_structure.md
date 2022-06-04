@@ -78,9 +78,15 @@
         1. Graph Traversal, BFS, DFS
         2. Shortest Path
         3. Implicit Graphs (2D Matrix)
-        4. Problems
     2. Graph can be represented in below two ways:
         1. Adjacency Matrix
             1. Space Complexity = O(V^2) ; N = number of vertices in graph
         2. Hash table with key as node and value as list of adjacent nodes;
             1. Space Complexity = O(V+E) ; V = no. of vertices in graphs, E = no. of edges in graphs
+
+10. Dynamic Programming:
+    1. DP is an optimisation technique
+    2. For problems with optimal sub structure and overlapping sub problems
+    3. DP solution can be
+        1. Top Down (Recursion + Memoization) (Easy to code)
+        2. Bottom Up (Iterative) (faster)
