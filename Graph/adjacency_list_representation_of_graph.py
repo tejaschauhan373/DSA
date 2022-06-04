@@ -210,3 +210,40 @@ class DirectedGraph:
                 if self.dfs(i, visited, stack):
                     return True
         return False
+
+    def dfs_to_dest_recusrive(self, source, dest, stack, res, curr):
+        # Arrive Node
+        stack[source] = True
+        new_curr = curr.copy()
+        new_curr.append(source)
+
+        # Do some work at node, return True if backedge is found here itself
+        for nbr in self.vertices[source]:
+            if not stack[nbr]:
+                if nbr == dest:
+                    res.append(new_curr + [nbr])
+                else:
+                    self.dfs_to_dest_recusrive(nbr, dest, stack, res, new_curr)
+
+        # going back
+        stack[source] = False
+
+    def get_all_path_from_source_to_dest(self, source, dest):
+        stack = [False] * self.total_vertices
+        res = []
+        self.dfs_to_dest_recusrive(source, dest, stack, res, [])
+        return res
+
+    def dfs_to_dest_with_stack(self, source, dest):
+        # apply DFS on DAG
+        stack = [(source, [source])]  # - store noth the (node, and the path leading to it)
+        res = []
+        while stack:
+            node, path = stack.pop()
+            # check leaf
+            if node == dest:
+                res.append(path)
+            # traverse rest
+            for nei in self.vertices[node]:
+                stack.append((nei, path + [nei]))
+        return res
