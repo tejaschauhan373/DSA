@@ -1,24 +1,30 @@
+# https://practice.geeksforgeeks.org/problems/diagonal-traversal-of-binary-tree/1/?track=amazon-trees&batchId=192#
+from collections import deque
+
+
 def diagonal(root):
-    def traversal(root, d, my_dict):
+    """
+    Time Complexity = O(N)
+    Space Complexity = O(N)
+    ; N = number of nodes
+    """
+    node = root
+    out = []
+    q = deque([])
 
-        if root is None:
-            return
+    while node:
 
-        try:
-            my_dict[d].append(root.data)
-        except:
-            my_dict = [d]
+        out.append(node.data)  # O(1)
 
-        traversal(root.left, d + 1, my_dict)
+        if node.left:  # O(1)
+            q.append(node.left)
 
-        traversal(root.right, d, my_dict)
+        if node.right:  # O(1)
+            node = node.right
+        else:
+            if q:
+                node = q.popleft()
+            else:
+                node = None
 
-    my_dict = {}
-
-    traversal(root, 0, my_dict)
-
-    res = []
-    for i in sorted(my_dict.keys()):
-        res.extend(my_dict[i])
-
-    return res
+    return out

@@ -2,21 +2,20 @@
 from Trees import TreeNode
 
 
-def add_parent(self, root, parent=None):
-    if root:
-        root.parent = parent  # Added extra property to each node, hence TC = O(N)
-        self.add_parent(root.left, root)
-        self.add_parent(root.right, root)
-
-
-def lowest_common_ancestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+def lowest_common_ancestor(root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
     """
     Time Complexity = O(N) ; N = Number of Nodes in Tree
     Space Complexity = O(N); N = Number of Nodes in Tree
     """
 
+    def add_parent(root, parent=None):
+        if root:
+            root.parent = parent  # Added extra property to each node, hence TC = O(N)
+            add_parent(root.left, root)
+            add_parent(root.right, root)
+
     p_ans = {}
-    self.add_parent(root, None)  # Traverse all nodes in Tree, Hence TC= O(N)
+    add_parent(root, None)  # Traverse all nodes in Tree, Hence TC= O(N)
 
     while p:  # Iterate till root node, hence TC = O(Hp)
         p_ans[p] = None

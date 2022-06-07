@@ -1,22 +1,22 @@
-def bottomView(root):
-    glo_d = {}
+# https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1/?track=amazon-trees&batchId=192
+from collections import deque
 
-    que = [root]
-    root.hd = 0
-    while que:
-        root = que[0]
-        hd = root.hd
 
-        glo_d[hd] = root.data
+def bottom_view(root):
+    q = deque([(root, 0)])
 
-        if (root.left):
-            root.left.hd = hd - 1
-            que.append(root.left)
+    hash_map = {}
+    while q:
+        curr, cl = q.popleft()
 
-        if (root.right):
-            root.right.hd = hd + 1
-            que.append(root.right)
+        hash_map[cl] = curr.data
 
-        que.pop(0)
+        if curr.left:
+            temp = (curr.left, cl - 1)
+            q.append(temp)
 
-    return [glo_d[i] for i in sorted(glo_d.keys())]
+        if curr.right:
+            temp = (curr.right, cl + 1)
+            q.append(temp)
+
+    return [hash_map[k] for k in sorted(hash_map.keys())]

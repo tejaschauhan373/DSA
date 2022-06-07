@@ -12,7 +12,7 @@ class LinkedList:
 
 def tree_to_linked_list(root):
     """
-    Time Complexity = O(N)
+    Time Complexity = O(N) ; N = number of nodes
     Space Complexity = O(H) ; H = height of tree
     """
     l = LinkedList()

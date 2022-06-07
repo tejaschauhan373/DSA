@@ -1,3 +1,4 @@
+# https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1/?track=amazon-trees&batchId=192
 from collections import deque
 
 
@@ -8,61 +9,64 @@ class Node:
         self.left = None
 
 
-class Solution:
-    def printBoundaryView(self, root):
+def print_boundary_view(root):
+    if root is None:
+        return []
+
+    if root.left is None and root.right is None:
+        return [root.data]
+
+    all_data = [root.data]
+
+    def left_boundry_tree(root):
         if root is None:
-            return []
+            return
 
-        all_data = [root.data]
+        if root.left:  # Check if it is not leaf node
+            all_data.append(root.data)
+            left_boundry_tree(root.left)
+        elif root.right:  # Check if it is not leaf node
+            all_data.append(root.data)
+            left_boundry_tree(root.right)
 
-        def left_boundry_tree(root):
-            if root is None:
-                return
+    right = []
 
-            if root.left:
-                all_data.append(root.data)
-                left_boundry_tree(root.left)
-            elif root.right:
-                all_data.append(root.data)
-                left_boundry_tree(root.right)
+    def right_boundry_tree(root):
 
-        right = []
+        if root is None:
+            return
 
-        def right_boundry_tree(root):
+        if root.right:  # Check if it is not leaf node
+            right.insert(0, root.data)
+            right_boundry_tree(root.right)
+        elif root.left:  # Check if it is not leaf node
+            right.insert(0, root.data)
+            right_boundry_tree(root.left)
 
-            if root is None:
-                return
-
-            if root.right:
-                right.insert(0, root.data)
-                right_boundry_tree(root.right)
-            elif root.left:
-                right.insert(0, root.data)
-                right_boundry_tree(root.left)
-
-        def leave_node(root):
-            if root and root.left is None and root.right is None:
-                all_data.append(root.data)
-
-            if root.left is not None:
-                leave_node(root.left)
-
-            if root.right is not None:
-                leave_node(root.right)
+    def leaf_node(root):
+        # check if it is leaf node
+        if root and root.left is None and root.right is None:
+            all_data.append(root.data)
 
         if root.left is not None:
-            left_boundry_tree(root.left)
-
-        leave_node(root)
+            leaf_node(root.left)
 
         if root.right is not None:
-            right_boundry_tree(root.right)
+            leaf_node(root.right)
 
-        return all_data + right
+    if root.left is not None:
+        left_boundry_tree(root.left)
+
+    leaf_node(root)
+
+    if root.right is not None:
+        right_boundry_tree(root.right)
+
+    return all_data + right
 
 
-def buildTree(s):
-    if (len(s) == 0 or s[0] == "N"):
+def build_tree(s):
+    if len(s) == 0 or s[0] == "N":
         return None
 
     ip = list(map(str, s.split()))
@@ -77,14 +81,14 @@ def buildTree(s):
 
     i = 1
 
-    while (size > 0 and i < len(ip)):
+    while size > 0 and i < len(ip):
         currNode = q[0]
         q.popleft()
         size -= 1
 
         currVal = ip[i]
 
-        if (currVal != "N"):
+        if currVal != "N":
             currNode.left = Node(int(currVal))
             q.append(currNode.left)
             size += 1
@@ -108,8 +112,7 @@ if __name__ == "__main__":
     t = int(input())
     for _ in range(0, t):
         s = input()
-        root = buildTree(s)
-        obj = Solution()
-        res = obj.printBoundaryView(root)
+        root = build_tree(s)
+        res = print_boundary_view(root)
         for i in res:
             print(i, end=" ")
