@@ -19,10 +19,10 @@ def num_of_minutes_bfs_queue(n: int, headID: int, manager: List[int], informTime
     while level:
         size = len(level)
         while size:
-            curr = level.popleft()
-            cost = max(cost, curr[-1])
-            for nbr in graph[curr[0]]:
-                level.append((nbr, curr[-1] + informTime[nbr]))
+            node, time = level.popleft()
+            cost = max(cost, time)
+            for nbr in graph[node]:
+                level.append((nbr, time + informTime[nbr]))
             size -= 1
 
     return cost
@@ -43,10 +43,10 @@ def num_of_minutes__dijkstra_heapq(n: int, headID: int, manager: List[int], info
     while level:
         size = len(level)
         while size:
-            curr = heappop(level)
-            distance[curr[-1]] = curr[0]
-            for nbr in graph[curr[-1]]:
-                heappush(level, (curr[0] + informTime[nbr], nbr))
+            time, node = heappop(level)
+            distance[node] = time
+            for nbr in graph[node]:
+                heappush(level, (time + informTime[nbr], nbr))
             size -= 1
 
     return max(distance)

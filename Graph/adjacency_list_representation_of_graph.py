@@ -90,7 +90,11 @@ class Graph:
 
     def contains_cycle(self):
         visited = [False] * self.total_vertices
-        return self.cycle_detection_dfs(0, visited, -1)
+        for i in range(self.total_vertices):
+            if not visited[i]:
+                res = self.cycle_detection_dfs(0, visited, -1)
+                if res:
+                    return True
 
 
 class Node:
