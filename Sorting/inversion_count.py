@@ -7,7 +7,6 @@ def merge(arr: list, l: int, r: int) -> int:
 
     i = l
     j = mid + 1
-    k = 0
     cnt = 0
 
     while i <= mid and j <= r:
@@ -19,7 +18,6 @@ def merge(arr: list, l: int, r: int) -> int:
         else:
             temp.append(arr[i])
             i += 1
-        k += 1
 
     while i <= mid:
         temp.append(arr[i])
