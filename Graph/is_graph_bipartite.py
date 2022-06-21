@@ -7,7 +7,7 @@ from collections import defaultdict, deque
 def is_bipartite(graph: List[List[int]]) -> bool:
     """
     Time Complexity = O(V+E)
-    Space Complexity = O(V+E) in worst case if each node connected to every other nodes of graph
+    Space Complexity = O(V+E) in worst case if every node is connected to every other node of graph
     ; V = no. of vertices, E = no. of edges
     """
     NOT_COLORED, BLUE, GREEN = 0, 1, -1
@@ -45,7 +45,7 @@ def is_bipartite(graph: List[List[int]]) -> bool:
 def possible_bi_partition(n: int, dislikes: List[List[int]]) -> bool:
     """
     Time Complexity = O(V+E)
-    Space Complexity = O(V+E) in worst case if each node connected to every other nodes of graph
+    Space Complexity = O(V+E) in worst case if every node is connected to every other node of graph
     ; V = no. of vertices, E = no. of edges
     """
     if n == 1:
