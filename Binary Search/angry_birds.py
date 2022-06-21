@@ -20,12 +20,12 @@ def can_place_birds(birds: int, nests: int, positions: list, distance: int) -> b
 
 def find_maximum_distance_between_birds(birds: int, nests: int, positions: list) -> int:
     """
-    Time Complexity = O(Nlog(positions[N-1]))
+    Time Complexity = O(Nlog(N)); N = len(positions)
     Space Complexity = O(1)
     """
     positions.sort()
     start = 0
-    end = positions[-1]
+    end = positions[-1] - positions[0]
     ans = -1
 
     while start <= end:
