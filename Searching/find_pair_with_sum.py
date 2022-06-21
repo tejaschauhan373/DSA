@@ -5,6 +5,7 @@ def brute_force(numbers: list, target_sum: int) -> list:
     :return: list of pair with given sum
 
     Time complexity : O(n^2)
+    Space complexity : O(1)
     """
     all_pairs = []
     for i in range(len(numbers)):
@@ -40,7 +41,8 @@ def moderate_bin_search(numbers: list, target_sum: int) -> list:
     :param target_sum: sum of pair should be
     :return: list of pair with given sum
 
-    Time complexity : O(nlogn)
+    Time complexity = O(nlog(n))
+    Space Complexity = O(1)
     """
     all_pairs = []
     numbers.sort()
@@ -60,6 +62,7 @@ def optimize_map(numbers: list, target_sum: int) -> list:
     :return: list of pair with given sum
 
     Time complexity : O(n)
+    Space complexity : O(n)
     """
     my_set = {}
     all_pairs = []
@@ -78,13 +81,14 @@ def two_pointer_approach(numbers: list, target_sum: int) -> list:
     :param target_sum: sum of pair should be
     :return: list of pair with given sum
 
-    Time complexity : O(n) with reduced space complexity or without using dictionary
+    Time complexity : O(nlog(n)) with reduced space complexity or without using dictionary
+    Space Complexity = O(1)
     """
-    numbers.sort()
+    numbers.sort()  # TC = O(nlog(n))
     all_pairs = []
     i = 0
     j = len(numbers) - 1
-    while i < j:
+    while i < j:  # TC = O(n)
         if numbers[i] + numbers[j] == target_sum:
             all_pairs.append([numbers[i], numbers[j]])
             i += 1
