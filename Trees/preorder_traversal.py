@@ -4,7 +4,7 @@ from collections import deque
 
 
 # https://www.techiedelight.com/preorder-tree-traversal-iterative-recursive/
-
+# Root -> Left -> Right
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -12,33 +12,35 @@ class TreeNode:
         self.right = right
 
 
+def preorder_traversal_iterative(root: TreeNode) -> List[int]:
+
+    if root is None:
+        return []
+
+    level = deque([root])
+
+    res = []
+
+    while level:
+
+        ele = level.pop()
+
+        res.append(ele.val)
+
+        if ele.right:
+            level.append(ele.right)
+
+        if ele.left:
+            level.append(ele.left)
+
+    return res
+
+
 class Solution:
-    def preorderTraversalIterative(self, root: TreeNode) -> List[int]:
-
-        if root is None:
-            return []
-
-        level = deque([root])
-
-        res = []
-
-        while level:
-
-            ele = level.pop()
-
-            res.append(ele.val)
-
-            if ele.right:
-                level.append(ele.right)
-
-            if ele.left:
-                level.append(ele.left)
-
-        return res
-
-    def preorderTraversalRecusrive(self, root: TreeNode) -> List[int]:
-
+    def __init__(self):
         self.res = []
+
+    def preorder_traversal_recursive(self, root: TreeNode) -> List[int]:
 
         self.preorder(root)
 
@@ -49,6 +51,5 @@ class Solution:
             return
 
         self.res.append(root.val)
-
         self.preorder(root.left)
         self.preorder(root.right)

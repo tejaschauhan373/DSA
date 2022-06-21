@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversa
+# https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
