@@ -3,6 +3,7 @@ from typing import List
 from collections import deque
 
 
+# https://leetcode.com/problems/binary-tree-preorder-traversal/
 # https://www.techiedelight.com/preorder-tree-traversal-iterative-recursive/
 # Root -> Left -> Right
 class TreeNode:
@@ -13,7 +14,6 @@ class TreeNode:
 
 
 def preorder_traversal_iterative(root: TreeNode) -> List[int]:
-
     if root is None:
         return []
 
@@ -41,7 +41,6 @@ class Solution:
         self.res = []
 
     def preorder_traversal_recursive(self, root: TreeNode) -> List[int]:
-
         self.preorder(root)
 
         return self.res

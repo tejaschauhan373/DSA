@@ -3,6 +3,7 @@ from typing import List
 from collections import deque
 
 
+# https://leetcode.com/problems/binary-tree-postorder-traversal
 # https://www.techiedelight.com/postorder-tree-traversal-iterative-recursive/
 # Left -> Right -> Root
 class TreeNode:
@@ -13,7 +14,6 @@ class TreeNode:
 
 
 def postorder_traversal_iterative(root: TreeNode) -> List[int]:
-
     if root is None:
         return []
 
@@ -40,7 +40,6 @@ class Solution:
         self.res = []
 
     def postorder_traversal_recursive(self, root: TreeNode) -> List[int]:
-
         self.post_order(root)
 
         return self.res
