@@ -6,6 +6,7 @@
 2. [Concept of binary tree](https://www.geeksforgeeks.org/difference-between-full-and-complete-binary-tree/)
 3. [Complexity Analysis of Recursion](https://leetcode.com/explore/learn/card/recursion-i/256/complexity-analysis/1669/)
 4. [Dynamic Programming](https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/4034/)
+5. [Interview Topics for Big Tech](https://github.com/jwasham/coding-interview-university/blob/main/README.md#google-interview-university)
 
 ## List of Data Structure and its Time Complexity
 
