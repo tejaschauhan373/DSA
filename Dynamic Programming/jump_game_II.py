@@ -65,5 +65,6 @@ def min_jump_greedy_reverse(nums: List[int]) -> int:
 
 if __name__ == "__main__":
     a = [2, 3, 1, 1, 4]
+    print(jump(a))
     print(min_jump_bfs_optimized(a))
-    print(min_jump_greedy(a))
+    print(min_jump_greedy_reverse(a))
