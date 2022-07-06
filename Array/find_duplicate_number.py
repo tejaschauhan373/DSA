@@ -1,6 +1,6 @@
 def findDuplicate(nums) -> int:
     """
-    Time Complexity = O(Nlog(N)) ; N = no. of elements in nums
+    Time Complexity ~= O(Nlog(N)) ; N = no. of elements in nums
     Space Complexity = O(1)
     """
     nums.sort()
