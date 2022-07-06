@@ -1,10 +1,10 @@
+# https://www.techiedelight.com/binary-search/
 # find the specific element from given sorted array
-# Time Complexity = O(logN)
-# Space Complexity = O(N)
+
 def binary_search_recursive(arr: list, k: int, start: int, end: int) -> int:
     """
-    Time Complexity = O(N)
-    Space Complexity = O(H) ; Height of Tree (To store call stack)
+    Time Complexity = O(log(N)) ; N = no. of elements in array
+    Space Complexity = O(log(N)) ;  To store function call in stack
     """
     if start > end:
         return -1
@@ -21,7 +21,7 @@ def binary_search_recursive(arr: list, k: int, start: int, end: int) -> int:
 
 def binary_search_iterative(arr: list, k: int) -> int:
     """
-    Time Complexity = O(N)
+    Time Complexity = O(log(N)) ; N = no. of elements in array
     Space Complexity = O(1)
     """
     start = 0

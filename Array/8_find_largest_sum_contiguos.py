@@ -12,5 +12,3 @@ def maxSubArraySum(a, size):
 
 
 print(maxSubArraySum(arr, len(arr)))
-
-# print(arr)

@@ -2,7 +2,10 @@ arr = input().split(' ')
 
 
 def checkReverse(arr, n):
-    start = 0
+    """
+    Time Complexity = O(n/2)
+    Space Complexity = O(1)
+    """
     end = n - 1
     for i in range(n // 2):
         if arr[i] != arr[end - i]:

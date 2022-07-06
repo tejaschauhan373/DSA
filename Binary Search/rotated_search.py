@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/search-in-rotated-sorted-array/
 # Find the element in given sorted rotated array
 
 def modified_binary_search(nums: list, target: int) -> int:
@@ -9,7 +10,7 @@ def modified_binary_search(nums: list, target: int) -> int:
 
         if nums[mid] == target:
             return mid
-        elif nums[start] <= nums[mid]:
+        elif nums[start] <= nums[mid]:  # check if start to mid is sorted in ascending order or not
 
             if nums[mid] > target >= nums[start]:
                 end = mid - 1

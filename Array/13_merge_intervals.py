@@ -1,24 +1,26 @@
+# https://leetcode.com/problems/merge-intervals
+
 def merge(intervals):
-    a = []
-    intervals.sort(key=lambda x: x[0])
-    last = intervals[0]
+    """
+    Time Complexity = O(Nlog(N)) ; N = len(intervals)
+    Space Complexity = O(1) ; We don't consider space complexity of output.
+    """
+    intervals.sort(key=lambda x: x[0])  # TC = time sort, O(Nlog(N))
+    ans = []
     i = 1
-    if len(intervals) == 1:
-        return intervals
+    n = len(intervals)
 
-    while i < len(intervals):
+    last = intervals[0]
+    while i < n:
         if last[-1] >= intervals[i][0]:
-            last = [min(last[0], intervals[i][0]), max(last[-1], intervals[i][-1])]
-            i += 1
+            last[-1] = max(intervals[i][-1], last[-1])
         else:
-            a.append(last)
+            ans.append(last)
             last = intervals[i]
-            i += 1
+        i += 1
 
-    if not a or last != a[-1]:
-        a.append(last)
-
-    return a
+    ans.append(last)
+    return ans
 
 
 print(merge([[1, 3], [2, 6], [8, 10], [15, 18]]))

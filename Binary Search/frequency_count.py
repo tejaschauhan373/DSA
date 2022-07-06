@@ -1,6 +1,10 @@
 # find the total count of given number in sorted array
 
 def lower_bound(arr: list, k: int) -> int:
+    """
+    Time Complexity = O(log(N)) ; N = no. of elements in array
+    Space Complexity = O(1)
+    """
     s = 0
     e = len(arr) - 1
     ans = -1
@@ -19,6 +23,10 @@ def lower_bound(arr: list, k: int) -> int:
 
 
 def upper_bound(arr: list, k: int) -> int:
+    """
+    Time Complexity = O(log(N)) ; N = no. of elements in array
+    Space Complexity = O(1)
+    """
     s = 0
     e = len(arr) - 1
     ans = -1
